@@ -175,8 +175,8 @@ function ReactCompareImage(props) {
       // it's necessary to reset event handlers each time the canvasWidth changes
 
       // for mobile
-      containerElement.addEventListener('touchstart', startSliding); // 01
-      window.addEventListener('touchend', finishSliding); // 02
+      // containerElement.addEventListener('touchstart', startSliding); // 01
+      // window.addEventListener('touchend', finishSliding); // 02
 
       // for desktop
       if (hover) {
