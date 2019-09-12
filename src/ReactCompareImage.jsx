@@ -157,7 +157,7 @@ function ReactCompareImage(props) {
       }
 
       // Slide the image even if you just click or tap (not drag)
-      handleSliding(e);
+      // handleSliding(e);
 
       window.addEventListener('mousemove', handleSliding); // 07
       window.addEventListener('touchmove', handleSliding); // 08
@@ -175,11 +175,8 @@ function ReactCompareImage(props) {
       // it's necessary to reset event handlers each time the canvasWidth changes
 
       // for mobile
-      // containerElement.addEventListener('touchstart', startSliding); // 01
-      // window.addEventListener('touchend', finishSliding); // 02
-
-      // for mobile
-      containerElement.addEventListener('touchmove', startSliding); // 01
+      containerElement.addEventListener('touchstart', startSliding); // 01
+      window.addEventListener('touchend', finishSliding); // 02
 
       // for desktop
       if (hover) {
