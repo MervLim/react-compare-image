@@ -178,6 +178,10 @@ function ReactCompareImage(props) {
       // containerElement.addEventListener('touchstart', startSliding); // 01
       // window.addEventListener('touchend', finishSliding); // 02
 
+      // for mobile
+      containerElement.addEventListener('touchmove', startSliding); // 01
+      window.addEventListener('touchend', finishSliding); // 02
+
       // for desktop
       if (hover) {
         containerElement.addEventListener('mousemove', handleSliding); // 03
