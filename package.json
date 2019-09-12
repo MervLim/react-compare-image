@@ -1,21 +1,21 @@
 {
-  "name": "react-compare-image",
-  "version": "1.4.1",
+  "name": "react-image-comparison",
+  "version": "0.0.3",
   "description": "React component to compare two images using slider.",
   "main": "dist/bundle.js",
   "scripts": {
     "build": "del-cli dist/**/* && webpack --config ./webpack.production.config.js",
     "build-web": "del-cli dist/**/* && cpx public/**/* dist && webpack --config ./webpack.website.config.js",
-    "prepublishOnly": "npm run test && del-cli dist/**/* && npm run build",
     "serve": "webpack-dev-server --config ./webpack.local.config.js",
     "test": "jest",
     "test:watch": "jest --watch",
+    "prepublishOnly": "npm run test && del-cli dist/**/* && npm run build",
     "storybook": "start-storybook -p 6006 -s ./public",
     "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
-    "url": "junkboy0315/react-compare-image"
+    "url": "git+https://github.com/junkboy0315/react-compare-image.git"
   },
   "author": "Shota Tamura",
   "license": "MIT",
@@ -74,5 +74,9 @@
     "slider",
     "react",
     "twentytwenty"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/junkboy0315/react-compare-image/issues"
+  },
+  "homepage": "https://github.com/junkboy0315/react-compare-image#readme"
 }
