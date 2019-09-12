@@ -68,6 +68,7 @@ function ReactCompareImage(props) {
   const [isSliding, setIsSliding] = useState(false);
 
   const containerRef = useRef();
+  const handleRef = useRef();
   const rightImageRef = useRef();
   const leftImageRef = useRef();
 
@@ -157,7 +158,7 @@ function ReactCompareImage(props) {
       }
 
       // Slide the image even if you just click or tap (not drag)
-      // handleSliding(e);
+      handleSliding(e);
 
       window.addEventListener('mousemove', handleSliding); // 07
       window.addEventListener('touchmove', handleSliding); // 08
@@ -170,12 +171,13 @@ function ReactCompareImage(props) {
     };
 
     const containerElement = containerRef.current;
+    const handleElement = handleRef.current;
 
     if (allImagesLoaded) {
       // it's necessary to reset event handlers each time the canvasWidth changes
 
       // for mobile
-      containerElement.addEventListener('touchstart', startSliding); // 01
+      handleElement.addEventListener('touchmove', handleSliding); // 01
       window.addEventListener('touchend', finishSliding); // 02
 
       // for desktop
@@ -345,7 +347,7 @@ function ReactCompareImage(props) {
           src={leftImage}
           style={styles.leftImage}
         />
-        <div style={styles.slider}>
+        <div ref={handleRef} style={styles.slider}>
           <div style={styles.line} />
           {handle ? (
             <div style={styles.handleCustom}>{handle}</div>
